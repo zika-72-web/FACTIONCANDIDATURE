@@ -1,5 +1,8 @@
 FROM nginx:alpine
 
-COPY candidature-faction.html /usr/share/nginx/html/index.html
+ENV PORT=10000
 
-EXPOSE 80
+COPY nginx.conf.template /etc/nginx/templates/default.conf.template
+COPY index.html /usr/share/nginx/html/index.html
+
+EXPOSE 10000
